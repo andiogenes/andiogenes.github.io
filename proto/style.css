@@ -172,7 +172,7 @@ a, .sidebar-block, #article-name, #article-common, #footer {
 	padding-bottom: 50px;
 }
 
-@media handheld and (max-width: 720px) {
+@media screen and (max-width: 720px) {
 	#sidebar {
 		display: none;
 		margin-top: 46px;
@@ -208,7 +208,7 @@ a, .sidebar-block, #article-name, #article-common, #footer {
 	}
 }
 
-@media handheld and (max-width: 320px) {
+@media screen and (max-width: 320px) {
 	#text-container {
 		padding-left: 5%;
 		padding-right: 5%;
