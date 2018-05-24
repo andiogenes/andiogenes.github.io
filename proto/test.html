@@ -8,43 +8,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<link rel="stylesheet" type="text/css" href="style.css">
-
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed|PT+Serif" rel="stylesheet"> 
 		<link rel="stylesheet" href="css/styles/vs2015.css">
+
 		<script src="js/highlight.pack.js"></script>
-		<script>
-			var sidebar = null;
-			var inQuery = false;
-			hljs.configure({tabReplace : null, useBR: true});
-			// подсветка синтаксиса в теге code после загрузки DOM
-			document.onreadystatechange = function() {
-    			if (document.readyState === "interactive") {
-					Array.prototype.forEach.call(document.body.getElementsByTagName("code"), function(block, i, arr) {hljs.highlightBlock(block);});
-
-					sidebar = document.getElementById("sidebar");
-					
-					document.getElementById("menu-button").addEventListener("click", function(e) {
-						if (sidebar.style.display != "inline")
-							sidebar.style.display = "inline";
-						else
-							sidebar.style.display = "none";
-					});
-
-					window.addEventListener("resize", function(e) {
-					    if (!window.matchMedia("screen and (max-width: 720px)").matches) {
-					        sidebar.style.display = "inline";
-					        inQuery = false;
-					    }
-					    else {
-					    	if (!inQuery)
-					    		sidebar.style.display = "none";
-
-					    	inQuery = true;   
-					    }
-					});
-    			}
-			}
-
-		</script>
+		<script src="js/logic.js"></script>
 	</head>
 
 	<body>
@@ -124,8 +92,8 @@
 						<p>В широком смысле Haxe (Haxe Toolkit) – это кросс-платформенный
 						инструментарий с открытым исходным кодом, который содержит в себе
 						следующие вещи:</p>
-						<ul>
-							<li>Сам язык. Haxe – это высокоуровневый язык
+
+						<ul><li>Сам язык. Haxe – это высокоуровневый язык
 						программирования с строгой типизацией, который транслируется «кросс-
 						компилятором» в родной код платформы (Desktop, Web, Android, iOS, и т.
 						д.) на другом языке программирования (C++, JS, PHP, Java, и прочие).
@@ -139,6 +107,7 @@
 						системой, базами данных и т. д. Также стандартная библиотека включает
 						специфичное для платформ API, например, интерфейсы для работы с
 						документом при трансляции в JavaScript.</li></ul>
+
 						<p>Важно помнить, что Haxe – это
 						не фреймворк, а инструментарий, который может быть использован для
 						создания кросс-платформенных инструментов и фреймворков.</p>
@@ -215,6 +184,26 @@
 						подстановки значений.</p>
 					</div>
 					<!-- Возможно, тут iframe с комментариями Disqus -->
+					<div id="disqus_thread"></div>
+					<script>
+
+					/**
+					*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+					*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+					
+					var disqus_config = function () {
+					this.page.url = window.location.href;  // Replace PAGE_URL with your page's canonical URL variable
+					this.page.identifier = "INTRO"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+					};
+					
+					(function() { // DON'T EDIT BELOW THIS LINE
+					var d = document, s = d.createElement('script');
+					s.src = 'https://howtohaxe.disqus.com/embed.js';
+					s.setAttribute('data-timestamp', +new Date());
+					(d.head || d.body).appendChild(s);
+					})();
+					</script>
+					<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 			</div>
 		</div>
 
