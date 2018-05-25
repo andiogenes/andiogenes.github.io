@@ -1,5 +1,3 @@
-/* Шуточная таблица стилей */
-
 body {
 	margin: 0 0 0;
 }
@@ -140,6 +138,11 @@ a, .sidebar-block, .article-name, .article-common, #search-area, #footer, .text-
 	width: 50%;
 }
 
+#text-container iframe {
+	width: 100%;
+	border: none;
+}
+
 .article-name {
 	font-size: 40pt;
 }
@@ -242,7 +245,7 @@ a, .sidebar-block, .article-name, .article-common, #search-area, #footer, .text-
 }
 
 #other {
-	padding-bottom: 50px;
+	padding-bottom: 100px;
 }
 
 .text-content-body .source-link {
