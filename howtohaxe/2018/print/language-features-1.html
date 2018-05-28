@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<title>Особенности языка Haxe, часть 1 | How to Haxe</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="description" content="Блог о языке программирования Haxe и разработке на нем.">
+		<meta name="keywords" content="особенности haxe, haxe абстрактные типы, haxe алгебраические типы">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" type="text/css" href="../css/style.css">
+		<link rel="stylesheet" href="../css/vs2015.css">
+		<link rel="shortcut icon" type="image/x-icon" href="../images/system/favicon.ico"/>
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed%7CPT+Serif" rel="stylesheet"> 
+
+		<script src="../js/highlight.pack.js"></script>
+		<script src="../js/logic.js"></script>
+	</head>
+
+	<body>
+		<div id="main-container">
+			<div id="mobile-menu">
+				<a href="../index.html" id="logo-mobile">
+					<img src="../images/system/logo.png" width="85" height="32" alt="How to Haxe">
+				</a>
+
+				<div id="menu-button">
+					<img src="../images/system/menu.svg" id="menu-icon" alt="">
+				</div>
+			</div>
+
+			<div id="sidebar">
+				<a href="../index.html" id="logo">
+					<img src="../images/system/logo.png" width="200" height="75" alt="How to Haxe">
+				</a>
+
+				<div id="search-container">
+					<!-- <img src="images/system/search.svg" id="search-icon" alt=""> -->
+					<div id="search-icon"></div>
+
+					<form action="http://www.google.com/search" method="get" target="blank">
+						<input type="hidden" name="q" value="site:http://andiogenes.github.io/howtohaxe">
+						<input type="search" name="q" id="search-area" autocomplete="off">
+					</form>
+				</div>
+
+				<div id="content-categories" class="sidebar-block">
+					<div class="sidebar-block-header">Рубрики</div>
+					<a href="../essentials.html" class="sidebar-block-entity">Введение в Haxe</a>
+					<a href="../js.html" class="sidebar-block-entity">Haxe и JavaScript</a>
+					<a href="../cpp.html" class="sidebar-block-entity">Haxe и C++</a>
+					<a href="../ofl.html" class="sidebar-block-entity">OpenFL и фреймворки</a>
+					<a href="../gamedev.html" class="sidebar-block-entity">Gamedev</a>
+					<a href="../made-with-haxe.html" class="sidebar-block-entity">Сделано с Haxe</a>
+				</div>
+
+				<div id="new-notes" class="sidebar-block">
+					<div class="sidebar-block-header">Новые записи</div>
+					<a href="raycaster.html" class="sidebar-block-entity">Пишем 2,5D-игру на Haxe - рейкастер</a>
+					<a href="simple-engine.html" class="sidebar-block-entity">Простой движок для браузера</a>
+					<a href="language-features-1.html" class="sidebar-block-entity">Особенности языка Haxe - часть 1</a>
+					<a href="intro-what-is.html" class="sidebar-block-entity">Введение в Haxe - что это такое</a>
+				</div>
+
+				<div id="twitter-frame" class="sidebar-block">
+					<!-- фрейм с записями из Twitter -->
+				</div>
+
+				<div id="other" class="sidebar-block">
+					<div class="sidebar-block-header">Прочее</div>
+					<a href="../links.html" class="sidebar-block-entity">Каталог ссылок</a>
+					<a href="../archive.html" class="sidebar-block-entity">Архив постов</a>
+					<a href="../map.html" class="sidebar-block-entity">Карта сайта</a>
+				</div>
+			</div>
+
+			<div id="main-empty-block-left"></div>
+
+			<div id="text-container">
+					<div class="text-content-header">
+						<div class="article-name">Особенности языка Haxe, часть 1</div>
+						<div class="article-common">
+							<a href="../essentials.html" class="article-common-crumb">Введение в Haxe</a> | 24.05.2018 |
+							<a href="print/language-features-1.html" class="print-version-button">
+								<img src="../images/system/print.svg" alt="Версия для печати">
+							</a>
+						</div>
+					</div>
+					<div class="text-content-body">
+						<p><i>Перевод статьи документации Haxe Language Features
+						(<a href="http://haxe.org/documentation/introduction/language-features.html" target="_blank">
+						http://haxe.org/documentation/introduction/language-features.html</a>) с
+						официального сайта. Все права на оригинальный текст принадлежат
+						авторам, все ошибки перевода на ответственности переводчика.</i></p>
+
+						<h2>Абстрактные типы</h2>
+						<p>Абстрактные типы это конструкции на этапе
+						компиляции, которые представлены иначе во время выполнения. Это
+						позволяет дать существующим типам совершенно новое значение.</p>
+
+						<h2>Анонимные структуры</h2>
+						<p>Данные могут быть легко сгруппированы в
+						анонимные структуры, минимизируя потребность в небольших классах
+						данных.</p>
+						<code class="haxe">
+							var point = { x: 0, y: 10 };<br>
+							point.x += 10;
+						</code>
+						<h2>Понятные массивы</h2>
+						<p>Создавайте и заполняйте массивы быстро, используя циклы и
+						логику.<p>
+						<code class="haxe">
+							var evenNumbers = [ for (i in 0...100) if (i%2==0) i ];
+						</code>
+						<h2>Классы, интерфейсы и наследование</h2>
+						<p>Haxe позволяет структурировать код в классы, это делает его объектно-
+						ориентированным языком. Поддерживаются общие связанные функции,
+						известные из таких языков как Java, включая наследование и
+						интерфейсы.</p>
+						<h2>Условная компиляция</h2>
+						<p>Условная компиляция позволяет
+						компилировать специфичный код в зависимости от параметров
+						компиляции. Это позволяет абстрагироваться от специфичных для
+						платформ различий, но может использоваться и для других целей,
+						таких как более подробная отладка.</p>
+						<code class="haxe">
+							#if js<br>
+							&emsp;js.Lib.alert("Hello");<br>
+							#elseif sys<br>
+							&emsp;Sys.println("Hello");<br>
+							#end
+						</code>
+						<h2>(Обобщенные) алгебраические
+						типы данных</h2>
+						<p>Структуры могут быть выражены через алгебраические
+						типы данных (АТД), которые известны в Haxe как перечисления
+						(enums). Кроме этого, Haxe поддерживает их обобщенный вариант
+						(ОАДТ).</p>
+						<code class="haxe">
+							enum Result {<br>
+							&emsp;Success(data:Array&lt;Int&gt;);<br>
+							&emsp;UserError(msg:String);<br>
+							&emsp;SystemError(msg:String, position:PosInfos);<br>
+							}
+						</code>
+						<h2>Встраиваемые вызовы</h2>
+						<p>Функции могут быть спроектированы как
+						встраиваемые, позволяя вставлять их код по месту вызова. Это может
+						значительно увеличить производительность без дублирования кода при
+						помощи ручного встраивания.</p>
+						<h2>Итераторы</h2>
+						<p>Итерирование по набору
+						значений, например, по элементам массива, очень легко реализуется
+						в Haxe через итераторы. Пользовательские классы могут легко
+						реализовать функциональность итераторов.</p>
+						<code class="haxe">
+							for (i in [1, 2, 3]) {<br>
+							&emsp;trace(i);<br>
+							}
+						</code>
+						<h2>Локальные функции и замыкания</h2>
+						<p>Функции в Haxe не ограничены полями классов и могут
+						быть легко объявлены в выражениях, позволяя создавать мощные
+						замыкания.</p>
+						<code class="haxe">
+							var buffer = "";<br>
+							function append(s:String) {<br>
+							&emsp;buffer += s;<br>
+							}<br>
+							append("foo");<br>
+							append("bar");<br>
+							trace(buffer); // foobar
+						</code>
+					</div>
+					<hr />
+					<!-- Возможно, тут iframe с комментариями Disqus -->
+					<div id="disqus_thread"></div>
+					<script>
+						var disqus_config = function () {
+						this.page.url = window.location.href;
+						this.page.identifier = window.location.pathname.split('/').pop().split('.').shift();
+						};
+						
+						(function() { // DON'T EDIT BELOW THIS LINE
+						var d = document, s = d.createElement('script');
+						s.src = 'https://howtohaxe.disqus.com/embed.js';
+						s.setAttribute('data-timestamp', +new Date());
+						(d.head || d.body).appendChild(s);
+						})();
+					</script>
+					<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+			</div>
+		</div>
+
+		<div id="footer">
+			<div id="footer-empty-block-left"></div>
+
+			<div id="footer-main-block">
+				<div id="footer-content">
+					<div class="footer-container">
+						<a href="../index.html" class="footer-content-entity">Главная</a>
+						<a href="../archive.html" class="footer-content-entity">Архив постов</a>
+						<a href="../map.html" class="footer-content-entity">Карта сайта</a>
+					</div>
+					<div class="footer-container">
+						<a href="../essentials.html" class="footer-content-entity">Введение в Haxe</a>
+						<a href="../ofl.html" class="footer-content-entity">OpenFL и фреймворки</a>
+						<a href="../made-with-haxe.html" class="footer-content-entity">Сделано с Haxe</a>
+					</div>
+				</div>
+				<hr>
+				<div id="footer-additional-info">
+					<div id="author-rights-routines">
+						Все права на бренд <a href="http://haxe.org" target="_blank">Haxe</a> принадлежат 
+						<a href="http://haxe.org/foundation" target="_blank">Haxe Foundation</a>
+					</div>
+					<a href="http://github.com/andiogenes" target="_blank">Антон Завьялов</a>, 2018
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
