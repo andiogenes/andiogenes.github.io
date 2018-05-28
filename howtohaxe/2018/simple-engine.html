@@ -34,7 +34,8 @@
 				</a>
 
 				<div id="search-container">
-					<img src="../images/system/search.svg" id="search-icon" alt="">
+					<!-- <img src="images/system/search.svg" id="search-icon" alt=""> -->
+					<div id="search-icon"></div>
 
 					<form action="http://www.google.com/search" method="get" target="blank">
 						<input type="hidden" name="q" value="site:http://andiogenes.github.io/howtohaxe">
@@ -88,20 +89,20 @@
 						<p>Одно из целевых применений Haxe - разработка игр. Так как язык
 						похож на ActionScript и изначально опирался на работу с Flash (ведущий
 						разработчик языка и лидер проекта <a
-						href="http://github.com/ncannasse">Nicolas Cannasse</a> изначально
+						href="http://github.com/ncannasse" target="_blank">Nicolas Cannasse</a> изначально
 						занимался флеш-играми и поддержкой технологии в компании <a
-						href="https://motion-twin.com/en/">Motion Twin</a>), определенную долю
+						href="https://motion-twin.com/en/" target="_blank">Motion Twin</a>), определенную долю
 						его аудитории заняли Flash-разработчики, так как Haxe позволяет
 						собирать под множество целевых платформ при помощи трансляции в код
 						платформы, стало возможным использовать интерфейсы библиотеки AS3 для
 						разработки под десктоп, мобильные устройства, HTML5 и т.д. Большой
-						успех получил фреймворк <a href="http://www.openfl.org/">OpenFL</a>,
+						успех получил фреймворк <a href="http://www.openfl.org/" target="_blank">OpenFL</a>,
 						представляющий перенос API Flash на Haxe, на его основе написаны порты
 						игровых библиотек с AS3, такие как <a
-						href="http://haxepunk.com/">HaxePunk</a> - порт движка FlashPunk, <a
+						href="http://haxepunk.com/" target="_blank">HaxePunk</a> - порт движка FlashPunk, <a
 						href="https://github.com/HaxeFlixel/flixel">HaxeFlixel</a> - порт
 						Flixel. В последнее время большой интерес представляет фреймворк <a
-						href="http://kha.tech/">Kha</a>, созданный с целью создания единой
+						href="http://kha.tech/" target="_blank">Kha</a>, созданный с целью создания единой
 						базы для разработки под всевозможные платформы, с интерфейсами для
 						работы как на высоком уровне, так и на низком. Глубже со всеми этими
 						библиотеками мы познакомимся чуть позже.</p> <p>Haxe также не
@@ -123,11 +124,10 @@
 						// задаем цвет заливки - красный<br>     context.fillRect(0, 0, 100,
 						50);    // рисуем прямоугольник с красным цветом фона<br> </code>
 						<p>Подробная справка по интерфейсу контекста рендеринга представлена
-						на сайте Mozilla: <a href="https://developer.mozilla.org/ru/docs/Web/A
-						PI/CanvasRenderingContext2D">https://developer.mozilla.org/ru/docs/Web
+						на сайте Mozilla: <a href="https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D" target="_blank">https://developer.mozilla.org/ru/docs/Web
 						/API/CanvasRenderingContext2D</a></p> <h2>Проектирование. На что будет
 						способен наш "движок"</h2> <p>По структуре проект представляет подобие
-						движка <a href="https://love2d.org/">LÖVE</a>:<br> У нас имеется
+						движка <a href="https://love2d.org/" target="_blank">LÖVE</a>:<br> У нас имеется
 						базовый класс <b>Game</b>, который представляет методы для загрузки
 						данных, обновления за промежуток времени, отрисовки графики, обработки
 						нажатий клавиатуры.<br> Также имеется класс <b>Graphics</b>, в котором
@@ -169,12 +169,11 @@
 						отрисовка прямоугольника заданных размеров</li>
 						<li><b>print</b>(caption, x, y) - отрисовка текста с заданным
 						содержимым</li> </ul> <p>О технической реализации поговорим попозже,
-						т.к. я опаздываю, посмотреть код можно <a href="https://gist.github.co
-						m/andiogenes/6fa61f49a451df1f27d96eabcbe6a899">здесь</a></p>
-						<h2>Пример работы движка</h2> <iframe
-						src="../multimedia/platformer/index.html" width="800" height="690">Содержимое невозможно
-						вывести, бразуер не поддерживает плавающие фреймы.</iframe> <p><a
-						href="../multimedia/platformer/index.html" target="_blank">Открыть в новом
+						т.к. я опаздываю, посмотреть код можно <a href="https://gist.github.com/andiogenes/6fa61f49a451df1f27d96eabcbe6a899" target="_blank">
+						здесь</a></p><h2>Пример работы движка</h2>
+						<iframe src="../multimedia/platformer/index.html" width="800" height="690">
+						Содержимое невозможно вывести, бразуер не поддерживает плавающие фреймы.</iframe> <p>
+						<a href="../multimedia/platformer/index.html" target="_blank">Открыть в новом
 						окне</a></p>
 					</div>
 					<hr />
@@ -216,10 +215,10 @@
 				<hr>
 				<div id="footer-additional-info">
 					<div id="author-rights-routines">
-						Все права на бренд <a href="http://haxe.org">Haxe</a> принадлежат 
-						<a href="http://haxe.org/foundation">Haxe Foundation</a>
+						Все права на бренд <a href="http://haxe.org" target="_blank">Haxe</a> принадлежат 
+						<a href="http://haxe.org/foundation" target="_blank">Haxe Foundation</a>
 					</div>
-					<a href="http://github.com/andiogenes">Антон Завьялов</a>, 2018
+					<a href="http://github.com/andiogenes" target="_blank">Антон Завьялов</a>, 2018
 				</div>
 			</div>
 		</div>
