@@ -1,0 +1,11 @@
+body {
+    margin: 0;
+}
+
+#concerto_canvas {
+    position: absolute;
+    width: 70%;
+    height: 100%;
+    margin-left: 15%;
+    margin-right: 15%;
+}

@@ -1,0 +1,56 @@
+{
+    "width": 800,
+    "height": 600,
+    "minListeners": 100,
+    "maxListeners": 300,
+    "minListenerMoney": 50,
+    "maxListenerMoney": 150,
+    "store": {
+        "x": 80,
+        "y": 300,
+        "items": [
+            {"price": 10, "quality": 20}
+        ]
+    },
+    "stage": {
+        "x": 400,
+        "y": 300,
+        "directionX": 0,
+        "directionY": 1,
+        "radius": 100,
+        "angle": 2.57079633,
+        "soundQuality": 10
+    },
+    "musicians": [
+        {
+            "name": "Tool",
+            "tuneUp": 30,
+            "songs": [
+                {"name": "Lateralus", "duration": 36, "quality": 100},
+                {"name": "Rosetta Stoned", "duration": 48, "quality": 100}
+            ]
+        },
+        {
+            "name": "Cream",
+            "tuneUp": 10,
+            "songs": [
+                {"name": "White Room", "duration": 65, "quality": 100},
+                {"name": "Ballad of Brave Ulysses", "duration": 123, "quality": 100}
+            ]
+        },
+        {
+            "name": "Rammstein",
+            "tuneUp": 45,
+            "songs": [
+                {"name": "ROMSTAIN", "duration": 345, "quality": 40}
+            ]
+        },
+        {
+            "name": "Джастин Бибер",
+            "tuneUp": 45,
+            "songs": [
+                {"name": "Грустная песня", "duration": 1200000, "quality": 0}
+            ]
+        }
+    ]
+}
