@@ -123,6 +123,7 @@ a, .sidebar-block, .article-name, .article-common, #search-area, #footer, .text-
 }
 
 #text-container {
+	padding-top: 26px;
 	display: inline-block;
 	padding-left: 11%;
 	padding-right: 5%;
